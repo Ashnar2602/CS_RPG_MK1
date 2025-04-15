@@ -6,6 +6,8 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace CS_RPG_MK1.Services
 {
@@ -59,7 +61,7 @@ namespace CS_RPG_MK1.Services
                 model = model ?? "deepseek/deepseek-chat-v3-0324:free", // Modello predefinito secondo i documenti
                 messages = new[]
                 {
-                    new { role = "system", content = "Rispondi sempre in italiano. Non troncare mai le frasi. Non superare i limiti di lunghezza richiesti nel prompt." },
+                    new { role = "system", content = "Sei un Dungeon Master per una partita di un gioco basato su SRD5.1, rispondi sempre in italiano. Non troncare mai le frasi. Non superare i limiti di lunghezza richiesti nel prompt." },
                     new { role = "user", content = prompt }
                 },
                 max_tokens = 400, // Limite di token per la risposta
@@ -106,6 +108,71 @@ namespace CS_RPG_MK1.Services
             catch (Exception e)
             {
                 return $"Errore inaspettato: {e.Message}";
+            }
+        }
+
+        public async Task CreateCharacterAsync()
+        {
+            if (!IsConfigured)
+            {
+                throw new InvalidOperationException("API key non configurata. Configura l'API key prima di effettuare richieste.");
+            }
+
+            var characterData = new Dictionary<string, string>();
+            string[] steps = { "razza", "sottorazza", "classe", "sottoclasse", "tratti" };
+
+            foreach (var step in steps)
+            {
+                string prompt = $"Guidami nella scelta della {step} per il mio personaggio. Elenca tutte le opzioni disponibili e chiedimi di scegliere.";
+
+                string response = await GetResponseAsync(prompt);
+
+                Console.WriteLine(response); // Mostra la risposta al giocatore (da sostituire con l'interfaccia grafica)
+
+                Console.WriteLine($"Inserisci la tua scelta per {step}:");
+                string userChoice = Console.ReadLine(); // Da sostituire con input dell'interfaccia grafica
+
+                characterData[step] = userChoice;
+            }
+
+            // Riepilogo finale
+            string summaryPrompt = "Genera un riepilogo dettagliato del personaggio basato sulle seguenti scelte: \n" +
+                                   string.Join("\n", characterData.Select(kv => $"{kv.Key}: {kv.Value}"));
+
+            string summary = await GetResponseAsync(summaryPrompt);
+
+            Console.WriteLine(summary); // Mostra il riepilogo al giocatore (da sostituire con l'interfaccia grafica)
+
+            // Salva il riepilogo su file
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "character_summary.json");
+            await File.WriteAllTextAsync(filePath, JsonSerializer.Serialize(characterData, new JsonSerializerOptions { WriteIndented = true }));
+
+            Console.WriteLine($"Riepilogo salvato in: {filePath}");
+        }
+
+        public void PopulateCharacterInfo()
+        {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "character_summary.json");
+
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("Il file del riepilogo del personaggio non esiste. Crea un personaggio prima di visualizzarlo.");
+                return;
+            }
+
+            string jsonContent = File.ReadAllText(filePath);
+            var characterData = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
+
+            if (characterData == null)
+            {
+                Console.WriteLine("Errore nel caricamento dei dati del personaggio.");
+                return;
+            }
+
+            // Popola l'area 2 con i dati del personaggio
+            foreach (var entry in characterData)
+            {
+                Console.WriteLine($"{entry.Key}: {entry.Value}"); // Sostituire con il codice per aggiornare l'interfaccia grafica
             }
         }
 

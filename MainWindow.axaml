@@ -34,7 +34,19 @@
         <!-- AREA 2 (in alto a destra) -->
         <Border Grid.Row="0" Grid.Column="2"
                 BorderBrush="Black" BorderThickness="1" Background="Black"> <!-- Cambiato sfondo a nero assoluto -->
-            <TextBlock Text="Area 2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Grid>
+                <TextBlock Text="Area 2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock x:Name="CharacterInfoBlock"
+                           Text="" 
+                           Margin="10" 
+                           TextWrapping="Wrap" 
+                           VerticalAlignment="Top" 
+                           HorizontalAlignment="Left" 
+                           Width="300" 
+                           Height="400" 
+                           Background="LightGray" 
+                           Padding="10" />
+            </Grid>
         </Border>
 
         <!-- AREA 3 (in basso a sinistra) - Input dell'utente -->

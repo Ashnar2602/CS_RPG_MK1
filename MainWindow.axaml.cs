@@ -5,6 +5,9 @@ using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
+using System.Text.Json;
+using System.Linq;
 using CS_RPG_MK1.Services;
 
 namespace CS_RPG_MK1;
@@ -19,6 +22,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         _openRouterService = new OpenRouterService();
+        LoadCharacterInfo();
         
         // Visualizza un messaggio iniziale che indica la necessità di configurare l'API key
         if (!_openRouterService.IsConfigured)
@@ -115,5 +119,30 @@ public partial class MainWindow : Window
 
         // Aggiorna l'interfaccia utente
         AIResponseTextBlock.Text = _chatHistory.ToString();
+    }
+
+    private void LoadCharacterInfo()
+    {
+        string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "character_summary.json");
+
+        if (!File.Exists(filePath))
+        {
+            // Mostra un messaggio nell'interfaccia grafica se il file non esiste
+            this.FindControl<TextBlock>("CharacterInfoBlock").Text = "Nessun personaggio trovato. Crea un personaggio per visualizzarlo.";
+            return;
+        }
+
+        string jsonContent = File.ReadAllText(filePath);
+        var characterData = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
+
+        if (characterData == null)
+        {
+            this.FindControl<TextBlock>("CharacterInfoBlock").Text = "Errore nel caricamento dei dati del personaggio.";
+            return;
+        }
+
+        // Popola l'area 2 con i dati del personaggio
+        var characterInfo = string.Join("\n", characterData.Select(kv => $"{kv.Key}: {kv.Value}"));
+        this.FindControl<TextBlock>("CharacterInfoBlock").Text = characterInfo;
     }
 }
