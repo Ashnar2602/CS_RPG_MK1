@@ -4,34 +4,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="CS_RPG_MK1.MainWindow"
-        Title="CS_RPG_MK1">
+        Width="800" Height="600"
+        Title="Layout 5 Aree">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />      <!-- Riga superiore -->
-            <RowDefinition Height="*" />      <!-- Riga inferiore -->
+            <RowDefinition Height="*" />   <!-- Riga superiore -->
+            <RowDefinition Height="*" />   <!-- Riga inferiore -->
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />   <!-- Area 3 -->
-            <ColumnDefinition Width="1*" />   <!-- Area 4 -->
-            <ColumnDefinition Width="1*" />   <!-- Area 2 / 5 -->
+            <ColumnDefinition Width="2*" /> <!-- Area 1 / Area 3 -->
+            <ColumnDefinition Width="1*" /> <!-- Area 1 / Area 4 -->
+            <ColumnDefinition Width="1*" /> <!-- Area 2 / Area 5 -->
         </Grid.ColumnDefinitions>
 
-        <!-- Area 3 -->
-        <Border Grid.Row="0" Grid.Column="0" Background="LightGray" Name="Area3" />
+        <!-- AREA 1 (in alto a sinistra, larga) -->
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+            <TextBlock Text="Area 1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
 
-        <!-- Area 4 -->
-        <Border Grid.Row="0" Grid.Column="1" Background="LightGray" Name="Area4" />
+        <!-- AREA 2 (in alto a destra) -->
+        <Border Grid.Row="0" Grid.Column="2"
+                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+            <TextBlock Text="Area 2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
 
-        <!-- Divisore visibile tra le aree -->
-        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2" />
+        <!-- AREA 3 (in basso a sinistra) -->
+        <Border Grid.Row="1" Grid.Column="0"
+                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+            <TextBlock Text="Area 3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
 
-        <!-- Area 2 / 5 -->
-        <Border Grid.Row="0" Grid.Column="2" Background="LightGray" Name="Area2_5" />
+        <!-- AREA 4 (in basso centro) -->
+        <Border Grid.Row="1" Grid.Column="1"
+                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+            <TextBlock Text="Area 4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
 
-        <!-- Riga inferiore -->
-        <Border Grid.Row="1" Grid.ColumnSpan="3" Background="LightGray" Name="RigaInferiore" />
-
-        <!-- Divisore visibile tra le aree -->
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" />
+        <!-- AREA 5 (in basso a destra) -->
+        <Border Grid.Row="1" Grid.Column="2"
+                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+            <TextBlock Text="Area 5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
     </Grid>
 </Window>
