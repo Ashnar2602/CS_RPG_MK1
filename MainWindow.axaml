@@ -20,27 +20,26 @@
 
         <!-- AREA 1 (in alto a sinistra, larga) - Risposte dell'AI -->
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                BorderBrush="Black" BorderThickness="1" Background="#FFFFFF"> <!-- Cambiato sfondo a bianco -->
+                BorderBrush="Black" BorderThickness="1" Background="Black"> <!-- Cambiato sfondo a nero assoluto -->
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <TextBlock x:Name="AIResponseTextBlock" 
                           Margin="10"
                           TextWrapping="Wrap"
                           Text="Benvenuto nel Gioco di Ruolo! Attendo i tuoi comandi..."
                           HorizontalAlignment="Left"
-                          VerticalAlignment="Top"
-                          Foreground="Black" /> <!-- Cambiato colore del testo a nero -->
+                          VerticalAlignment="Top" />
             </ScrollViewer>
         </Border>
 
         <!-- AREA 2 (in alto a destra) -->
         <Border Grid.Row="0" Grid.Column="2"
-                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+                BorderBrush="Black" BorderThickness="1" Background="Black"> <!-- Cambiato sfondo a nero assoluto -->
             <TextBlock Text="Area 2" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
 
         <!-- AREA 3 (in basso a sinistra) - Input dell'utente -->
         <Border Grid.Row="1" Grid.Column="0"
-                BorderBrush="Black" BorderThickness="1" Background="#FFFFFF"> <!-- Cambiato sfondo a bianco -->
+                BorderBrush="Black" BorderThickness="1" Background="Black"> <!-- Cambiato sfondo a nero assoluto -->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -53,8 +52,7 @@
                          AcceptsReturn="True"
                          TextWrapping="Wrap"
                          Watermark="Inserisci il tuo comando qui..."
-                         KeyDown="OnUserInputKeyDown"
-                         Foreground="Black" /> <!-- Cambiato colore del testo a nero -->
+                         KeyDown="OnUserInputKeyDown" />
                          
                 <Button x:Name="SendButton" 
                         Grid.Row="1"
@@ -67,13 +65,13 @@
 
         <!-- AREA 4 (in basso centro) -->
         <Border Grid.Row="1" Grid.Column="1"
-                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+                BorderBrush="Black" BorderThickness="1" Background="Black"> <!-- Cambiato sfondo a nero assoluto -->
             <TextBlock Text="Area 4" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
 
         <!-- AREA 5 (in basso a destra) -->
         <Border Grid.Row="1" Grid.Column="2"
-                BorderBrush="Black" BorderThickness="1" Background="LightGray">
+                BorderBrush="Black" BorderThickness="1" Background="Black"> <!-- Cambiato sfondo a nero assoluto -->
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Impostazioni" HorizontalAlignment="Center" Margin="0,0,0,10" />
                 <Button x:Name="ConfigApiButton" 
