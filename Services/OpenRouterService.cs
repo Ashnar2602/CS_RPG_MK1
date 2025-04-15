@@ -73,6 +73,13 @@ namespace CS_RPG_MK1.Services
 
                 // Leggiamo la risposta
                 responseContent = await response.Content.ReadAsStringAsync();
+
+                // Controlla se la risposta è in formato JSON
+                if (!response.Content.Headers.ContentType?.MediaType?.Contains("application/json") ?? true)
+                {
+                    return $"Errore: la risposta non è in formato JSON. Contenuto della risposta: {responseContent}";
+                }
+
                 var deserializedResponse = JsonSerializer.Deserialize<OpenRouterResponse>(responseContent);
 
                 return deserializedResponse?.Choices?[0]?.Message?.Content ?? 
