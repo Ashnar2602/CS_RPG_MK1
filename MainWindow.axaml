@@ -8,8 +8,8 @@
         Title="Layout 5 Aree">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />   <!-- Riga superiore -->
-            <RowDefinition Height="*" />   <!-- Riga inferiore -->
+            <RowDefinition Height="3*" />   <!-- Riga superiore: 3/4 del totale -->
+            <RowDefinition Height="1*" />   <!-- Riga inferiore: 1/4 del totale -->
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
