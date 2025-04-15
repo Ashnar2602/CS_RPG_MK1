@@ -9,6 +9,7 @@ using System.IO;
 using System.Text.Json;
 using System.Linq;
 using CS_RPG_MK1.Services;
+using CS_RPG_MK1.Views;
 
 namespace CS_RPG_MK1;
 
@@ -16,7 +17,7 @@ public partial class MainWindow : Window
 {
     private StringBuilder _chatHistory = new StringBuilder();
     private readonly OpenRouterService _openRouterService;
-    private string _currentApiKey;
+    private string? _currentApiKey;
 
     public MainWindow()
     {
@@ -48,7 +49,7 @@ public partial class MainWindow : Window
 
     private async void ConfigApiButton_Click(object sender, RoutedEventArgs e)
     {
-        var dialog = new ApiKeyDialog(_currentApiKey);
+        var dialog = new ApiKeyDialog(_currentApiKey ?? string.Empty);
         var result = await dialog.ShowDialog<bool>(this);
 
         if (result)
@@ -70,7 +71,7 @@ public partial class MainWindow : Window
 
     private async Task ProcessUserInput()
     {
-        string userInput = UserInputTextBox.Text?.Trim();
+        string userInput = UserInputTextBox?.Text?.Trim() ?? string.Empty;
         
         if (string.IsNullOrWhiteSpace(userInput))
             return;
@@ -88,7 +89,11 @@ public partial class MainWindow : Window
         _chatHistory.AppendLine("Tu: " + userInput);
         
         // Svuota il campo di input
-        UserInputTextBox.Text = string.Empty;
+        var userInputTextBox = UserInputTextBox;
+        if (userInputTextBox != null)
+        {
+            userInputTextBox.Text = string.Empty;
+        }
         
         // Aggiorna l'interfaccia per mostrare subito l'input dell'utente
         AIResponseTextBlock.Text = _chatHistory.ToString();
@@ -128,7 +133,11 @@ public partial class MainWindow : Window
         if (!File.Exists(filePath))
         {
             // Mostra un messaggio nell'interfaccia grafica se il file non esiste
-            this.FindControl<TextBlock>("CharacterInfoBlock").Text = "Nessun personaggio trovato. Crea un personaggio per visualizzarlo.";
+            var characterInfoBlock = this.FindControl<TextBlock>("CharacterInfoBlock");
+            if (characterInfoBlock != null)
+            {
+                characterInfoBlock.Text = "Nessun personaggio trovato. Crea un personaggio per visualizzarlo.";
+            }
             return;
         }
 
@@ -137,12 +146,26 @@ public partial class MainWindow : Window
 
         if (characterData == null)
         {
-            this.FindControl<TextBlock>("CharacterInfoBlock").Text = "Errore nel caricamento dei dati del personaggio.";
+            var characterInfoBlock = this.FindControl<TextBlock>("CharacterInfoBlock");
+            if (characterInfoBlock != null)
+            {
+                characterInfoBlock.Text = "Errore nel caricamento dei dati del personaggio.";
+            }
             return;
         }
 
         // Popola l'area 2 con i dati del personaggio
         var characterInfo = string.Join("\n", characterData.Select(kv => $"{kv.Key}: {kv.Value}"));
-        this.FindControl<TextBlock>("CharacterInfoBlock").Text = characterInfo;
+        var characterInfoBlockFinal = this.FindControl<TextBlock>("CharacterInfoBlock");
+        if (characterInfoBlockFinal != null)
+        {
+            characterInfoBlockFinal.Text = characterInfo;
+        }
+    }
+
+    private void CreateCharacterButton_Click(object sender, RoutedEventArgs e)
+    {
+        var createCharacterWindow = new CreateCharacterWindow();
+        createCharacterWindow.ShowDialog(this);
     }
 }

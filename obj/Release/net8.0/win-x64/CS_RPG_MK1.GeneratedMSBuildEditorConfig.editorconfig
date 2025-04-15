@@ -27,3 +27,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/workspaces/CS_RPG_MK1/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/workspaces/CS_RPG_MK1/Views/CreateCharacterWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

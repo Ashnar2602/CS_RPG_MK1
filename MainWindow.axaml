@@ -46,6 +46,11 @@
                            Height="400" 
                            Background="LightGray" 
                            Padding="10" />
+                <Button x:Name="CreateCharacterButton"
+                        Content="Seleziona/Crea Personaggio"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="CreateCharacterButton_Click" />
             </Grid>
         </Border>
 

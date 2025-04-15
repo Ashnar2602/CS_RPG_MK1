@@ -1,0 +1,78 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CS_RPG_MK1.Views.CreateCharacterWindow"
+        Title="Crea Personaggio"
+        Width="600" Height="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Creazione del Personaggio" 
+                   FontSize="20" 
+                   HorizontalAlignment="Center" 
+                   Margin="10" />
+
+        <ScrollViewer Grid.Row="1" Margin="10">
+            <StackPanel>
+                <!-- Selezione della razza -->
+                <TextBlock Text="Razza:" FontWeight="Bold" />
+                <ComboBox x:Name="RaceComboBox">
+                    <ComboBoxItem Content="Umano" />
+                    <ComboBoxItem Content="Elfo" />
+                    <ComboBoxItem Content="Nano" />
+                    <ComboBoxItem Content="Halfling" />
+                    <!-- Aggiungere altre razze SRD5.1 -->
+                </ComboBox>
+
+                <!-- Selezione della sottorazza -->
+                <TextBlock Text="Sottorazza:" FontWeight="Bold" Margin="0,10,0,0" />
+                <ComboBox x:Name="SubraceComboBox">
+                    <!-- Le opzioni cambieranno in base alla razza selezionata -->
+                </ComboBox>
+
+                <!-- Selezione della classe -->
+                <TextBlock Text="Classe:" FontWeight="Bold" Margin="0,10,0,0" />
+                <ComboBox x:Name="ClassComboBox">
+                    <ComboBoxItem Content="Guerriero" />
+                    <ComboBoxItem Content="Mago" />
+                    <ComboBoxItem Content="Ladro" />
+                    <ComboBoxItem Content="Chierico" />
+                    <!-- Aggiungere altre classi SRD5.1 -->
+                </ComboBox>
+
+                <!-- Selezione della sottoclasse -->
+                <TextBlock Text="Sottoclasse:" FontWeight="Bold" Margin="0,10,0,0" />
+                <ComboBox x:Name="SubclassComboBox">
+                    <!-- Le opzioni cambieranno in base alla classe selezionata -->
+                </ComboBox>
+
+                <!-- Sistema Point Buy per le statistiche -->
+                <TextBlock Text="Distribuzione delle Statistiche (Point Buy):" FontWeight="Bold" Margin="0,10,0,0" />
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Forza:" />
+                    <NumericUpDown x:Name="StrengthInput" Minimum="8" Maximum="15" />
+
+                    <TextBlock Text="Destrezza:" />
+                    <NumericUpDown x:Name="DexterityInput" Minimum="8" Maximum="15" />
+
+                    <TextBlock Text="Costituzione:" />
+                    <NumericUpDown x:Name="ConstitutionInput" Minimum="8" Maximum="15" />
+
+                    <TextBlock Text="Intelligenza:" />
+                    <NumericUpDown x:Name="IntelligenceInput" Minimum="8" Maximum="15" />
+
+                    <TextBlock Text="Saggezza:" />
+                    <NumericUpDown x:Name="WisdomInput" Minimum="8" Maximum="15" />
+
+                    <TextBlock Text="Carisma:" />
+                    <NumericUpDown x:Name="CharismaInput" Minimum="8" Maximum="15" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button Grid.Row="2" Content="Conferma" HorizontalAlignment="Right" Margin="10" Click="OnConfirmButtonClick" />
+    </Grid>
+</Window>
