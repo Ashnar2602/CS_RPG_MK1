@@ -22,10 +22,16 @@
         <!-- Area 4 -->
         <Border Grid.Row="0" Grid.Column="1" Background="LightGray" Name="Area4" />
 
+        <!-- Divisore visibile tra le aree -->
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2" />
+
         <!-- Area 2 / 5 -->
         <Border Grid.Row="0" Grid.Column="2" Background="LightGray" Name="Area2_5" />
 
         <!-- Riga inferiore -->
         <Border Grid.Row="1" Grid.ColumnSpan="3" Background="LightGray" Name="RigaInferiore" />
+
+        <!-- Divisore visibile tra le aree -->
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" />
     </Grid>
 </Window>
