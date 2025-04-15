@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -12,9 +13,9 @@ namespace CS_RPG_MK1.Services
     {
         private readonly HttpClient _httpClient;
         private string _apiKey;
-        
+
         // URL di base per le chiamate all'API OpenRouter
-        private const string BaseUrl = "https://openrouter.ai/api/v1";
+        private const string BaseUrl = "https://openrouter.ai/api/v1/";
         private const string DefaultModel = "deepseek/deepseek-chat-v3-0324:free";
 
         public OpenRouterService()
@@ -55,21 +56,29 @@ namespace CS_RPG_MK1.Services
             // Adattamento del metodo secondo i documenti di OpenRouter
             var requestBody = new
             {
-                model = model ?? "openai/gpt-4", // Modello predefinito secondo i documenti
+                model = model ?? "deepseek/deepseek-chat-v3-0324:free", // Modello predefinito secondo i documenti
                 messages = new[]
                 {
+                    new { role = "system", content = "Rispondi sempre in italiano. Non troncare mai le frasi. Non superare i limiti di lunghezza richiesti nel prompt." },
                     new { role = "user", content = prompt }
-                }
+                },
+                max_tokens = 400, // Limite di token per la risposta
+                temperature = 0.7 // Temperatura per la generazione della risposta
             };
 
             string responseContent = string.Empty; // Inizializzazione della variabile
             try
             {
                 // Effettuiamo la chiamata API
-                var response = await _httpClient.PostAsJsonAsync("/chat/completions", requestBody);
+                string json = JsonSerializer.Serialize(requestBody);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync("chat/completions", content);
+
+
                 responseContent = await response.Content.ReadAsStringAsync();
 
                 // Controlla il codice di stato HTTP
+                var statusCode = response.StatusCode;
                 if (!response.IsSuccessStatusCode)
                 {
                     return $"Errore HTTP: {response.StatusCode}. Contenuto della risposta: {responseContent}";
@@ -83,7 +92,7 @@ namespace CS_RPG_MK1.Services
 
                 var deserializedResponse = JsonSerializer.Deserialize<OpenRouterResponse>(responseContent);
 
-                return deserializedResponse?.Choices?[0]?.Message?.Content ?? 
+                return deserializedResponse?.Choices?[0]?.Message?.Content ??
                        "Non sono riuscito a interpretare la risposta dell'API.";
             }
             catch (JsonException jsonEx)
