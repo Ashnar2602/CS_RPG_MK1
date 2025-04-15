@@ -520,7 +520,7 @@
         }
       }
     },
-    "net8.0/osx-x64": {
+    "net8.0/win-x64": {
       "Avalonia/11.2.7": {
         "type": "package",
         "dependencies": {
@@ -560,7 +560,10 @@
         }
       },
       "Avalonia.Angle.Windows.Natives/2.1.22045.20230930": {
-        "type": "package"
+        "type": "package",
+        "native": {
+          "runtimes/win-x64/native/av_libglesv2.dll": {}
+        }
       },
       "Avalonia.BuildServices/0.0.31": {
         "type": "package",
@@ -660,9 +663,6 @@
         },
         "runtime": {
           "lib/net8.0/Avalonia.Native.dll": {}
-        },
-        "native": {
-          "runtimes/osx/native/libAvaloniaNative.dylib": {}
         }
       },
       "Avalonia.Remote.Protocol/11.2.7": {
@@ -779,9 +779,6 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
-        },
-        "native": {
-          "runtimes/osx/native/libHarfBuzzSharp.dylib": {}
         }
       },
       "HarfBuzzSharp.NativeAssets.WebAssembly/7.3.0.3": {
@@ -804,6 +801,9 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
+        },
+        "native": {
+          "runtimes/win-x64/native/libHarfBuzzSharp.dll": {}
         }
       },
       "MicroCom.Runtime/0.11.0": {
@@ -851,9 +851,6 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
-        },
-        "native": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {}
         }
       },
       "SkiaSharp.NativeAssets.WebAssembly/2.88.9": {
@@ -876,6 +873,9 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
+        },
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {}
         }
       },
       "System.IO.Pipelines/9.0.4": {
@@ -1858,15 +1858,15 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Runtime.osx-x64",
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
             "version": "[8.0.14, 8.0.14]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "name": "Microsoft.NETCore.App.Host.win-x64",
             "version": "[8.0.14, 8.0.14]"
           },
           {
-            "name": "Microsoft.NETCore.App.Runtime.osx-x64",
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
             "version": "[8.0.14, 8.0.14]"
           }
         ],
@@ -1879,7 +1879,7 @@
       }
     },
     "runtimes": {
-      "osx-x64": {
+      "win-x64": {
         "#import": []
       }
     }

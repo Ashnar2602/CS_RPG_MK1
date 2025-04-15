@@ -64,6 +64,7 @@ namespace CS_RPG_MK1.Services
                 max_tokens = 500
             };
 
+            string responseContent = string.Empty; // Inizializzazione della variabile
             try
             {
                 // Effettuiamo la chiamata API
@@ -71,9 +72,15 @@ namespace CS_RPG_MK1.Services
                 response.EnsureSuccessStatusCode();
 
                 // Leggiamo la risposta
-                var responseContent = await response.Content.ReadFromJsonAsync<OpenRouterResponse>();
-                return responseContent?.Choices?[0]?.Message?.Content ?? 
+                responseContent = await response.Content.ReadAsStringAsync();
+                var deserializedResponse = JsonSerializer.Deserialize<OpenRouterResponse>(responseContent);
+
+                return deserializedResponse?.Choices?[0]?.Message?.Content ?? 
                        "Non sono riuscito a interpretare la risposta dell'API.";
+            }
+            catch (JsonException jsonEx)
+            {
+                return $"Errore nel parsing della risposta JSON: {jsonEx.Message}. Contenuto della risposta: {responseContent}";
             }
             catch (HttpRequestException e)
             {

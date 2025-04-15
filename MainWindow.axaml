@@ -20,14 +20,15 @@
 
         <!-- AREA 1 (in alto a sinistra, larga) - Risposte dell'AI -->
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                BorderBrush="Black" BorderThickness="1" Background="#F5F5F5">
+                BorderBrush="Black" BorderThickness="1" Background="#FFFFFF"> <!-- Cambiato sfondo a bianco -->
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <TextBlock x:Name="AIResponseTextBlock" 
                           Margin="10"
                           TextWrapping="Wrap"
                           Text="Benvenuto nel Gioco di Ruolo! Attendo i tuoi comandi..."
                           HorizontalAlignment="Left"
-                          VerticalAlignment="Top" />
+                          VerticalAlignment="Top"
+                          Foreground="Black" /> <!-- Cambiato colore del testo a nero -->
             </ScrollViewer>
         </Border>
 
@@ -39,7 +40,7 @@
 
         <!-- AREA 3 (in basso a sinistra) - Input dell'utente -->
         <Border Grid.Row="1" Grid.Column="0"
-                BorderBrush="Black" BorderThickness="1" Background="#E8E8E8">
+                BorderBrush="Black" BorderThickness="1" Background="#FFFFFF"> <!-- Cambiato sfondo a bianco -->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -52,7 +53,8 @@
                          AcceptsReturn="True"
                          TextWrapping="Wrap"
                          Watermark="Inserisci il tuo comando qui..."
-                         KeyDown="OnUserInputKeyDown" />
+                         KeyDown="OnUserInputKeyDown"
+                         Foreground="Black" /> <!-- Cambiato colore del testo a nero -->
                          
                 <Button x:Name="SendButton" 
                         Grid.Row="1"
