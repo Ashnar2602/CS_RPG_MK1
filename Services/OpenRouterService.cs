@@ -52,16 +52,14 @@ namespace CS_RPG_MK1.Services
                 systemPrompt += " " + context;
             }
 
-            // Prepariamo la richiesta
+            // Adattamento del metodo secondo i documenti di OpenRouter
             var requestBody = new
             {
-                model = model ?? DefaultModel,
+                model = model ?? "openai/gpt-4", // Modello predefinito secondo i documenti
                 messages = new[]
                 {
-                    new { role = "system", content = systemPrompt },
                     new { role = "user", content = prompt }
-                },
-                max_tokens = 500
+                }
             };
 
             string responseContent = string.Empty; // Inizializzazione della variabile
@@ -69,10 +67,13 @@ namespace CS_RPG_MK1.Services
             {
                 // Effettuiamo la chiamata API
                 var response = await _httpClient.PostAsJsonAsync("/chat/completions", requestBody);
-                response.EnsureSuccessStatusCode();
-
-                // Leggiamo la risposta
                 responseContent = await response.Content.ReadAsStringAsync();
+
+                // Controlla il codice di stato HTTP
+                if (!response.IsSuccessStatusCode)
+                {
+                    return $"Errore HTTP: {response.StatusCode}. Contenuto della risposta: {responseContent}";
+                }
 
                 // Controlla se la risposta è in formato JSON
                 if (!response.Content.Headers.ContentType?.MediaType?.Contains("application/json") ?? true)
