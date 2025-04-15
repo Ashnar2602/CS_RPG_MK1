@@ -78,7 +78,7 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.FileSystem.Watcher.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.IsolatedStorage.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.MemoryMappedFiles.dll
-/home/codespace/.nuget/packages/system.io.pipelines/8.0.0/lib/net8.0/System.IO.Pipelines.dll
+/home/codespace/.nuget/packages/system.io.pipelines/9.0.4/lib/net8.0/System.IO.Pipelines.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.Pipes.AccessControl.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.Pipes.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.UnmanagedMemoryStream.dll
@@ -89,7 +89,7 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Memory.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Net.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Net.Http.dll
-/usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Net.Http.Json.dll
+/home/codespace/.nuget/packages/system.net.http.json/9.0.4/lib/net8.0/System.Net.Http.Json.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Net.HttpListener.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Net.Mail.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Net.NameResolution.dll
@@ -156,8 +156,8 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Text.Encoding.CodePages.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Text.Encoding.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Text.Encoding.Extensions.dll
-/usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Text.Encodings.Web.dll
-/usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Text.Json.dll
+/home/codespace/.nuget/packages/system.text.encodings.web/9.0.4/lib/net8.0/System.Text.Encodings.Web.dll
+/home/codespace/.nuget/packages/system.text.json/9.0.4/lib/net8.0/System.Text.Json.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Text.RegularExpressions.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Threading.Channels.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Threading.dll

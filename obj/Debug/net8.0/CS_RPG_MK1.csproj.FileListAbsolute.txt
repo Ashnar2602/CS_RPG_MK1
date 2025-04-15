@@ -66,3 +66,7 @@
 /workspaces/CS_RPG_MK1/obj/Debug/net8.0/CS_RPG_MK1.csproj.Up2Date
 /workspaces/CS_RPG_MK1/obj/Debug/net8.0/CS_RPG_MK1.genruntimeconfig.cache
 /workspaces/CS_RPG_MK1/obj/Debug/net8.0/ref/CS_RPG_MK1.dll
+/workspaces/CS_RPG_MK1/bin/Debug/net8.0/System.Net.Http.Json.dll
+/workspaces/CS_RPG_MK1/bin/Debug/net8.0/System.Text.Encodings.Web.dll
+/workspaces/CS_RPG_MK1/bin/Debug/net8.0/System.Text.Json.dll
+/workspaces/CS_RPG_MK1/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll

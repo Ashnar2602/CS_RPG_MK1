@@ -64,6 +64,10 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.2.7, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
@@ -79,15 +83,15 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "name": "Microsoft.AspNetCore.App.Runtime.osx-x64",
               "version": "[8.0.14, 8.0.14]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
               "version": "[8.0.14, 8.0.14]"
             },
             {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "name": "Microsoft.NETCore.App.Runtime.osx-x64",
               "version": "[8.0.14, 8.0.14]"
             }
           ],
@@ -100,7 +104,7 @@
         }
       },
       "runtimes": {
-        "win-x64": {
+        "osx-x64": {
           "#import": []
         }
       }

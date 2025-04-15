@@ -19,6 +19,9 @@ build_property.ProjectDir = /workspaces/CS_RPG_MK1/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
+[/workspaces/CS_RPG_MK1/ApiKeyDialog.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/workspaces/CS_RPG_MK1/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

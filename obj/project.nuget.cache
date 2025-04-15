@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1i/dZN++wdA=",
+  "dgSpecHash": "1C5+caOTxfc=",
   "success": true,
   "projectFilePath": "/workspaces/CS_RPG_MK1/CS_RPG_MK1.csproj",
   "expectedPackageFiles": [
@@ -31,11 +31,14 @@
     "/home/codespace/.nuget/packages/skiasharp.nativeassets.macos/2.88.9/skiasharp.nativeassets.macos.2.88.9.nupkg.sha512",
     "/home/codespace/.nuget/packages/skiasharp.nativeassets.webassembly/2.88.9/skiasharp.nativeassets.webassembly.2.88.9.nupkg.sha512",
     "/home/codespace/.nuget/packages/skiasharp.nativeassets.win32/2.88.9/skiasharp.nativeassets.win32.2.88.9.nupkg.sha512",
-    "/home/codespace/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.io.pipelines/9.0.4/system.io.pipelines.9.0.4.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.net.http.json/9.0.4/system.net.http.json.9.0.4.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.text.encodings.web/9.0.4/system.text.encodings.web.9.0.4.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.text.json/9.0.4/system.text.json.9.0.4.nupkg.sha512",
     "/home/codespace/.nuget/packages/tmds.dbus.protocol/0.20.0/tmds.dbus.protocol.0.20.0.nupkg.sha512",
-    "/home/codespace/.nuget/packages/microsoft.netcore.app.runtime.win-x64/8.0.14/microsoft.netcore.app.runtime.win-x64.8.0.14.nupkg.sha512",
-    "/home/codespace/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/8.0.14/microsoft.aspnetcore.app.runtime.win-x64.8.0.14.nupkg.sha512",
-    "/home/codespace/.nuget/packages/microsoft.netcore.app.host.win-x64/8.0.14/microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512"
+    "/home/codespace/.nuget/packages/microsoft.netcore.app.runtime.osx-x64/8.0.14/microsoft.netcore.app.runtime.osx-x64.8.0.14.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.aspnetcore.app.runtime.osx-x64/8.0.14/microsoft.aspnetcore.app.runtime.osx-x64.8.0.14.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.netcore.app.host.osx-x64/8.0.14/microsoft.netcore.app.host.osx-x64.8.0.14.nupkg.sha512"
   ],
   "logs": []
 }

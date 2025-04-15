@@ -64,7 +64,6 @@
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Linq.Queryable.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Linq.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Memory.dll
-/workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Net.Http.Json.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Net.Http.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Net.HttpListener.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Net.Mail.dll
@@ -138,8 +137,6 @@
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.Encoding.CodePages.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.Encoding.Extensions.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.Encoding.dll
-/workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.Encodings.Web.dll
-/workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.Json.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.RegularExpressions.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Threading.Channels.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Threading.Overlapped.dll
@@ -208,6 +205,9 @@
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/MicroCom.Runtime.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/SkiaSharp.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.IO.Pipelines.dll
+/workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Net.Http.Json.dll
+/workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.Encodings.Web.dll
+/workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/System.Text.Json.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/Tmds.DBus.Protocol.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/av_libglesv2.dll
 /workspaces/CS_RPG_MK1/bin/Release/net8.0/win-x64/publish/libHarfBuzzSharp.dll
