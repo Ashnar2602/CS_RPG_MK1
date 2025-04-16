@@ -77,6 +77,13 @@
                         HorizontalAlignment="Right"
                         Margin="0,0,10,10"
                         Click="SendButton_Click" />
+                        
+                <Button x:Name="ManageCharactersButton" 
+                        Grid.Row="1"
+                        Content="Gestione Personaggi" 
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,10"
+                        Click="ManageCharactersButton_Click" />
             </Grid>
         </Border>
 

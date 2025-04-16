@@ -168,4 +168,11 @@ public partial class MainWindow : Window
         var createCharacterWindow = new CreateCharacterWindow();
         createCharacterWindow.ShowDialog(this);
     }
+
+    private void ManageCharactersButton_Click(object? sender, RoutedEventArgs e)
+    {
+        // Logica per aprire la finestra di gestione personaggi
+        var manageCharactersWindow = new ManageCharactersWindow();
+        manageCharactersWindow.Show();
+    }
 }
